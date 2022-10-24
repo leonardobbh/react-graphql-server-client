@@ -45,7 +45,7 @@ const deleteItem = ({ id: deletedId }) => {
         DBTODO.findIndex(({ id }) => id === deletedItem),
     );
 
-    return deledeletedIdtedItem;
+    return deletedItem;
 };
 
 const resolvers = {
