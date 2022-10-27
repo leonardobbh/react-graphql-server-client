@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 const { graphqlHTTP } = require("express-graphql");
 
 const todoSchema = require("./schema/todo");
@@ -7,7 +8,7 @@ const todoResolvers = require("./resolvers/resolver");
 // GraphQL schema
 
 const app = express();
-
+app.use(cors());
 app.use('/graphql', graphqlHTTP({
     schema: todoSchema,
     rootValue: todoResolvers,
